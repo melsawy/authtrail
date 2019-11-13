@@ -22,6 +22,7 @@ module AuthTrail
   end
 
   def self.track(strategy:, scope:, identity:, success:, request:, user: nil, failure_reason: nil)
+    Rails.logger.info "SawyAuthTrialOrig--#{request.inspect}"
     info = {
       strategy: strategy,
       scope: scope,
